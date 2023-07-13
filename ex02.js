@@ -26,13 +26,14 @@ app.get('/', (req, res) => {
   res.send({ ok: 1 })
 })
 app.get('/lists', async (req, res) => {
-  let row = await db('users_student')
+  console.log('lists')
+  let row = await db('users_advisor')
+  // .where("major_id", 98)
   res.send({
     datas: row,
     status: 1,
   })
 })
-
 app.listen(7001, () => {
   console.log('ready:candle:7001')
 })
